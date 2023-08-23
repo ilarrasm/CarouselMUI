@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
+import { FiberManualRecord } from "@mui/icons-material";
 
 interface DotsContainerProps {
   itemsLength: number;
@@ -16,19 +17,23 @@ const DotsContainer = ({ itemsLength, itemActive }: DotsContainerProps) => {
     <Box
       display="flex"
       justifyContent="center"
-      gap="1rem"
+      gap=".1rem"
       position="absolute"
-      bottom="20%"
+      bottom="10%"
       zIndex="999"
       width="100%"
+      alignItems="center"
     >
       {[...arrayEmpty(itemsLength)].map((_e, i) => (
         <Box
-          width="15px"
-          height="15px"
-          bgcolor={itemActive === i ? "red" : "green"}
-          key={`dotCarouselMobile-item-${0}`}
-        />
+          fontSize={itemActive === i ? "15px" : "7.5px"}
+          key={`dotCarouselMobile-item-${i}`}
+          color={
+            itemActive === i ? " rgb(255, 255, 255)" : "rgb(192, 192, 192)"
+          }
+        >
+          <FiberManualRecord fontSize="inherit" color="inherit" />
+        </Box>
       ))}
     </Box>
   );

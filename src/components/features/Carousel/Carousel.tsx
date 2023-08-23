@@ -14,7 +14,7 @@ interface CarouselProps {
 const StyledContainerMaster = styled(Box)`
   position: relative;
   overflow: hidden;
-  width: 200px;
+  width: 100%;
   height: 200px;
 `;
 
@@ -24,7 +24,6 @@ const StyledContainerChildren = styled(Box)`
   transition: transform 2s ease-in-out;
   height: 100%;
 `;
-
 
 const Carousel = ({ images }: CarouselProps) => {
   const { handleTouchStart, handleTouchEnd, currentIndex, transition } =
@@ -45,9 +44,10 @@ const Carousel = ({ images }: CarouselProps) => {
           >
             <Image
               src={src}
-              width={200}
+              width={500}
               height={200}
               alt={`${positionIndex} alt`}
+              style={{ objectFit: "cover" }}
             />
           </ItemCarousel>
         ))}
